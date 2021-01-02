@@ -1,0 +1,14 @@
+.c.obj:
+    cl /c /AL /FPa /G2s /Zl /Oaltie /Gh /W4 /Gt0 $<
+
+.prg.obj:
+    clipper $< /n/w/m
+
+errorsys.obj : errorsys.prg
+demo.obj     : demo.prg
+
+msghu852.obj : msghu852.c
+
+demo.exe : demo.prg errorsys.prg msghu852.obj
+           blinker fi demo,msghu852,errorsys nobell bli incr off
+
